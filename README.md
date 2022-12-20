@@ -1,14 +1,12 @@
 # virtual network builder HAKONIWA
 
-Synopsis
---------
+## Synopsis
 
 HAKONIWA as virtual network builder.
 Create VMs and connect VMs via virtual network by Terraform.
 
 
-Requisite
----------
+## Requisite
 
 - Internet reachability
 - Terraform
@@ -19,8 +17,7 @@ Requisite
 These tools are installed automatically by make setup.
 
 
-Usage
------
+## Usage
 
 1. make setup (once)
 2. logout if libvirt is installed (once)
@@ -29,8 +26,7 @@ Usage
 4. make apply
 
 
-Examples
---------
+## Examples
 
 `simple-network.tf` configuration has 4 VMs and 3 virtual networks.
 
@@ -46,6 +42,7 @@ locals {
 ```
 
 Topology:
+---------
 
 ```
 -------------------
@@ -71,7 +68,8 @@ Topology:
 -------------------
 ```
 
-Create it.
+Create it
+---------
 
 ```
 $ cat config/simple-network.tf 
@@ -125,8 +123,7 @@ $
 ```
 
 
-How to access VMs
------------------
+## How to access VMs
 
 After make apply, To get VM names and mgmt IP address, you can use "make show-hosts".
 
@@ -145,8 +142,7 @@ You can
 - `ssh IP_ADDRESS`
 
 
-VMs and network configuration
------------------------------
+## VMs and network configuration
 
 Typical host entry format:
 
@@ -174,20 +170,21 @@ host entry parameter:
   "default" as management network.
 
 
-HAKONIWA configuration
-----------------------
+## HAKONIWA configuration
 
 Edit `rules/config/mk`.
 
 
-Future plan
------------
+## Future plan
 
 - Speficy OS version for each VM
 - Customize storage size of VMs
 - Configuration VMs by Ansible
 
+## History
 
-LICENSE
--------
+- Dec 21, 2022  Initial release
+
+## LICENSE
+
 Apache-2.0
