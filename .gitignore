@@ -1,0 +1,9 @@
+*~
+.config
+images/*
+tf/config.tf
+tf/config.tf.bak
+tf/.terraform
+tf/terraform.tfstate
+tf/terraform.tfstate.backup
+tf/.terraform.lock.hcl
