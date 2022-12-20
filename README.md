@@ -1,9 +1,9 @@
-# virtual network builder HAKONIWA
+# HAKONIWA, virtual network builder
 
 ## Synopsis
 
-HAKONIWA as virtual network builder.
-Create VMs and connect VMs via virtual network by Terraform.
+HAKONIWA as virtual network builder for Linux host.
+You can create VMs and connect VMs via virtual network easily using HAKONIWA.
 
 
 ## Requisite
@@ -14,19 +14,23 @@ Create VMs and connect VMs via virtual network by Terraform.
 - libvirt
 
 
-These tools are installed automatically by make setup.
+These tools are installed automatically by `make setup`.
+
+Tested on Ubuntu 20.04 LTS.
 
 
-## Usage
+## Basic usage
 
-1. make setup (once)
-2. logout if libvirt is installed (once)
-3. select configuration such as config/simple-network.conf, or your own wrote file.
-3. make config CONFIG=config/simple-network.tf or your own wrote file.
-4. make apply
+1. `make setup` (once)
+2. logout if `libvirt` is installed (once)
+3. select configuration such as `config/simple-network.conf`, or your own wrote file.
+3. `make config CONFIG=config/simple-network.tf` or specify your own wrote file.
+4. `make apply`
+
+For help, type "`make`".
 
 
-## Examples
+## Example
 
 `simple-network.tf` configuration has 4 VMs and 3 virtual networks.
 
@@ -154,20 +158,20 @@ host entry parameter:
 
 - NAME
   VM name.
-- "os"
+- `"os"`
   OS image name.
   Currentry, one of
-  - "ubuntu"
-  - "debian"
-  - "cumulus"
-  - "sonic"
-- "cpu"
+  - `"ubuntu"`
+  - `"debian"`
+  - `"cumulus"`
+  - `"sonic"`
+- `"cpu"`
   Number of core.
-- "mem"
+- `"mem"`
   Memory size.  Megabyte.
-- "net"
+- `"net"`
   Virtual network names.  Virtual networks are automatically craated.
-  "default" as management network.
+  `"default"` as management network.
 
 
 ## HAKONIWA configuration
