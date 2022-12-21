@@ -14,6 +14,9 @@ DEBIAN_VERSION=11
 # 20.04
 UBUNTU_VERSION=20.04
 
+# 202012, 202106, 202111, 202205, or master
+SONIC_BRANCH=master
+
 # if yes, run ssh-keygen -R by make destroy
 AUTO_REMOVE_HOST_KEYS=no
 

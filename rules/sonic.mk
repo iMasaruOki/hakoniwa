@@ -1,7 +1,7 @@
+.PHONY: get-sonic-image
+
 get-sonic-image: ${IMAGEDIR}/sonic-vs.img
 
 ${IMAGEDIR}/sonic-vs.img:
-ifeq (${AUTO_GET_SONIC},yes)
-	echo "Sorry, getting SONiC-VS image automatically are currently not supported."
-	echo "Download by your hand, and put sonic-vs.img into images/."
-endif
+	mkdir -p images
+	curl $(shell curl -s https://sonic.software/builds.json | jq .${SONIC_BRANCH}.\"sonic-vs.img.gz\".url) | gzip -d > $@ || rm $@
